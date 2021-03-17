@@ -1,0 +1,10 @@
+.pages-cart {
+	.GooglePayCheckout {
+		margin-top: 10px;
+		@media (max-width: 800px) {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+	}
+}

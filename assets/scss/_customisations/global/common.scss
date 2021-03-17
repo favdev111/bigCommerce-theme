@@ -1,0 +1,185 @@
+// Global Layout
+body { background: $custom_body_colour; }
+
+.navPages, .header-logo-image-container, .navPages-list, .bx-img, .bx-img img, .navUser, .dropdown--quickSearch, .navUser-action--quickSearch {
+	transition: all 0.5s ease-in-out;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+}
+
+a, a.icon, .txt a, .footer a, img, .navPages-item, .navPages-action, .header-logo-image-container, .header-logo__link, select, .form-select, .card, .card .card-body a, button, .navUser-action {	
+	-webkit-tap-highlight-color: transparent;
+
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    
+    &:focus {
+    	outline: none !important;
+	}
+}
+button {
+	&.quickview {
+		display: none !important;
+	}
+}
+.skip-to-main-link{
+    clip: rect(1px, 1px, 1px, 1px);
+	height: 1px;
+	overflow: hidden;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important;
+    left: -9999em;
+    text-decoration: none;
+	text-transform: none;
+	top: -9999em;
+	outline: none;
+    /* Add any other styling to make it look good when in view */
+}
+.skip-to-main-link:focus {
+    clip: auto;
+	height: auto;
+	left: 6px;
+	top: 7px;
+	width: auto;
+	z-index: 100000;
+}
+body.hasAdminBar .banners {
+    margin-top: 0px;
+}
+.not-for-print {
+	display: none;
+}
+.banners {
+	background-color: $custom_lightgreen;
+	color: $custom_darkgreen;
+	.txt {
+		font-weight: 600;
+	}
+}
+.card {
+	.card-figure {
+		overflow: hidden;
+		background-color: transparent;
+		
+		.card-figcaption 
+		.card-figcaption-body
+		.card-figcaption-button {
+			margin: 0 auto 10px;
+		}
+		.card-img-container {
+			overflow: hidden;
+			img {
+				transition: all 0.5s ease-in-out;
+				-webkit-transition: all 0.5s ease-in-out;
+				-moz-transition: all 0.5s ease-in-out;
+				-o-transition: all 0.5s ease-in-out;
+			}
+			&:hover {
+				img {
+					transform: scale(1.1);
+				}
+			}
+		}
+	}
+	.card-body {
+		.card-title, .card-text, a {
+			color: $custom_darkgreen;
+			font-size: 20px;
+			font-weight: 400;
+		}
+		@media (max-width: 900px) {
+			text-align: center;
+		}
+	}
+}
+
+.button--primary {
+	background: $custom_darkgreen;
+	border-radius: 2px;
+	&:hover {
+		background: rgba(70, 90, 84, 0.8);
+	}
+}
+.button, .button--primary {
+	font-size: 1.2rem;
+	font-family: $custom_heading_font;
+	text-transform: uppercase;
+	font-weight: 600;
+}
+.slick-slider {
+	.slick-arrow {
+		border: none;
+		background-color: rgba(189, 196, 172, 0.75);
+		border-radius: 50%;
+		width: 50px;
+		height: 50px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		&::before, :hover::before {
+			background: url("../img/icons/icon-arrow.svg") center center no-repeat;
+			background-size: contain;
+		}
+		&.slick-prev::before {
+			transform: rotate(180deg);
+			margin-left: -6px;
+		}
+		&.slick-next::before {
+			margin-left: 6px;
+		}
+		&.slick-disabled {
+			cursor: default;
+    		opacity: 0.1;
+		}
+		&.slick-hidden {
+			display: none;
+		}
+		@media (max-width: 800px) {
+			&:before {
+				width: 2rem;
+				height: 2rem;
+			}
+		}
+		
+	}
+}
+.previewCartCheckout {
+	.GooglePayCheckout {
+		.GooglePayContainer {
+			margin-top: 10px;
+			    text-align: center;
+		}
+	}
+}
+
+// Desktop
+@media (min-width: 551px) {
+	.heroCarousel-slide  {
+		.heroCarousel-content {
+			left: auto;
+			right: calc(10vw + 10px);
+			width: 500px;
+		}
+		.heroCarousel-image {
+			object-position: 50% 0%;
+		}
+	}
+}
+
+@media (max-width: 800px) {
+	.mobileMenu-toggle, .btn-toggle-class {
+		z-index: 1000000;
+	}
+}
+
+@keyframes navOpen {
+    0% { opacity: 0; height: 1px; }
+    100% { opacity: 1; height: 90vh; }
+}

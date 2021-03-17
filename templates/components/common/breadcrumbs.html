@@ -1,0 +1,18 @@
+<nav aria-label="Breadcrumb">
+    <ol class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
+        {{#unless theme_settings.hide_breadcrumbs }}
+            {{#each breadcrumbs}}
+                <li class="breadcrumb {{#if @last}}is-active{{/if}}" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a class="breadcrumb-label"
+                       itemprop="item"
+                       href="{{url}}"
+                       {{#if @last}}aria-current="page"{{/if}}
+                    >
+                        <span itemprop="name">{{name}}</span>
+                    </a>
+                    <meta itemprop="position" content="{{add @index 1}}" />
+                </li>
+            {{/each}}
+        {{/unless}}
+    </ol>
+</nav>

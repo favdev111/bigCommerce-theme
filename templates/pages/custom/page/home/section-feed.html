@@ -1,0 +1,13 @@
+<section class="section-feed">
+	<h3>Our feed <span class="icon-instagram"><figure class="icon"></figure></span></h3>
+	<div class="bx-feed-container"></div>
+	<div class="bx-feed-container-temp">
+
+    {{#each banners.bottom_metadata}}
+    {{#if this.banner-name '==' 'homepage-feed'}}
+        {{{this.content}}}
+    {{/if}}
+    {{/each}}
+
+	</div>
+</section>

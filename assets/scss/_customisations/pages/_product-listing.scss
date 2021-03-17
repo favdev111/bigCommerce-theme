@@ -1,0 +1,11 @@
+.pages-category {
+	.body {
+		.form-fieldset {
+			.form-field {
+				@media (max-width: 550px) {
+				    width: 200px;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,50 @@
+{{#partial "page"}}
+<div class="container">
+    <div class="post-list" data-load-posts data-url="{{settings.request.absolute_path}}">
+        <section class="post-list">
+            <div class="container">
+                <div class="row" data-post-list>
+                    {{!-- POPULATED BY JS --}}
+
+                    <img style="margin: 0 auto;" class="loading" style="height: 50px; width: 50px;" src="{{cdn 'assets/img/loading.svg'}}" alt="Loading">
+                </div>
+            </div>
+        </section>
+
+        <div style="display: none;">
+            {{!-- EXAMPLE MARKUP, MODIFY TO SUIT DESIGN --}}
+            <div class="article article-type--{{#replace " " (toLowerCase page.title)}}{{else}}{{(toLowerCase page.title)}}{{/replace}}" data-post-markup>
+                <div class="image" data-insert-bg-thumbnail></div>
+                <h2 class="title"><a data-insert-url data-insert-title href=""></a></h2>
+                <p class="summary" data-insert-summary></p>
+            </div>
+        </div>
+
+        <div class="pagination" data-pagination>
+            <a class="btn secondary" style="display: none;" href="#" data-pagination-next>
+                View more
+            </a>
+        </div>
+
+        {{!-- ALTERNATE PAGINATION --}}
+        {{!--<div class="pagination-blog"  data-pagination>
+            <a class="pagination-prev" style="display: none;" href="#" data-pagination-prev>
+                <svg class="icon">
+                    <use xlink:href="#icon-arrow-down-filter" />
+                </svg>
+            </a>
+            <ul class="pages" data-pagination-pages>
+    
+            </ul>
+            <a class="pagination-next" style="display: none;" href="#" data-pagination-next>
+                <svg class="icon">
+                    <use xlink:href="#icon-arrow-down-filter" />
+                </svg>
+            </a>
+        </div>--}}
+    </div>
+
+</div>
+
+{{/partial}}
+{{> layout/base}}

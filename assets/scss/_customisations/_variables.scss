@@ -1,0 +1,55 @@
+// Custom fonts
+// These fonts would be included via the `config.json` and referenced here
+$custom_heading_font: 'rift', sans-serif;
+$custom_body_font: 'nobel', sans-serif;
+
+// Custom Colours
+$custom_black: #000000;
+$custom_white: #FFFFFF;
+$custom_lightgreen: #BDC4AC;
+$custom_darkgreen: #465A54;
+$custom_pink: #EED1C5;
+$custom_body_colour: #FFF6ED;
+
+// Custom fonts
+$custom_header_1: 45px;
+
+
+// Custom Pixel values
+$custom_site_width: 1560px;
+$custom_short_width: 1060px;
+$custom_breakpoint: 1060px;
+
+
+// Custom Layout
+$custom_mobile_section_margin_bottom: 0.85rem;
+
+// Custom Mixins
+
+@mixin example {
+    
+}
+
+/**
+ *  Calculate REM font-size function
+ *  
+ *  Scale font-size based on the root font-size.
+ *
+ *  Usage: @include fontsize(13);
+ *  Output: font-size: 0.8125rem;
+ */
+ @mixin fontsize($pixelsize, $root: 16, $unit: rem) {
+    font-size: ($pixelsize / $root) + $unit;
+}
+
+/**
+ *  Viewport function
+ *  
+ *  Scale property based on viewport width/height. Works well for fonts, widths, padding/margins, etc.
+ *
+ *  Usage: @include viewport(font-size, 13, 380);
+ *  Output: font-size: 3.42105vw;
+ */
+@mixin viewport($property, $initialsize, $maxwidth, $unit: vw) {
+    #{$property}: ($initialsize*100)/$maxwidth + $unit;
+}

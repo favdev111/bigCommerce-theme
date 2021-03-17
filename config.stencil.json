@@ -1,0 +1,10 @@
+{
+  "normalStoreUrl": "https://b2csite.mybigcommerce.com",
+  "port": "6600",
+  "customLayouts": {
+    "brand": {},
+    "category": {},
+    "page": {},
+    "product": {}
+  }
+}

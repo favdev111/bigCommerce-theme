@@ -1,0 +1,11 @@
+---
+check:
+    - check:js
+    - check:css
+
+check:js:
+    - eslint
+    - karma
+
+check:css:
+    - scsslint

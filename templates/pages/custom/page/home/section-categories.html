@@ -1,0 +1,17 @@
+<section class="section-categories">
+	<h3>Shop by category</h3>
+	<div class="bx-categories-container bx-flex bx-flex-container">
+	{{#each categories}}
+	<a href="{{url}}" class="btn-bx-categories">
+		<div class="bx-categories">
+			<div class="bx-img">
+				<img class="img" src="{{getImage image 'productgallery_size' (cdn theme_settings.default_image_product)}}" alt="{{image.alt}}">
+			</div>
+			<div class="bx-content item-absolute">
+				<p>{{name}}</p>
+			</div>
+		</div>
+	</a>
+	{{/each}}
+	</div>
+</section>

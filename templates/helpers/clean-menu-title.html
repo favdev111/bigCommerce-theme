@@ -1,0 +1,11 @@
+{{#if (occurrences name " #HIDE") ">" 0}}
+    {{!-- Don't return anything --}}
+    
+{{else if (occurrences name " #DUPE") ">" 0}}
+    {{!-- Display name without #DUPE# in it --}}
+    {{first (split name " #DUPE") 1}}
+
+{{else}}
+    {{!-- Display name as is --}}
+    {{name}}
+{{/if}}

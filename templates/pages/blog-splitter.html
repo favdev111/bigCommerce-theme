@@ -1,0 +1,8 @@
+---
+blog:
+    posts:
+        limit: 2000
+        summary: 200
+---
+{{!-- REPLACE blog.html WITH THIS FILE TO ENABLE --}}
+[{{#each blog.posts}}{{#if @first}}{{else}},{{/if}}{"name":"{{{title}}}","author":"{{{author}}}","summary":"{{#each (split (sanitize summary) " ")}}{{#if @key "<=" 30}}{{this}} {{/if}}{{/each}}","url":"{{url}}","thumbnail_large":"{{getImageSrcset thumbnail 1x=(default fallback_size '620w')}}","thumbnail_medium":"{{getImageSrcset thumbnail 1x=(default fallback_size '500w')}}"}{{/each}}]

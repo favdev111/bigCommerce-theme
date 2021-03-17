@@ -1,0 +1,3 @@
+{
+  "components/common/modal/modal-close-btn": "<button class=\"modal-close\"\n        type=\"button\"\n        title=\"{{lang 'common.close'}}\"\n        {{additional_attr}}\n>\n    <span class=\"aria-description--hidden\">{{lang 'common.close'}}</span>\n    <span aria-hidden=\"true\">&#215;</span>\n</button>\n"
+}

@@ -1,0 +1,95 @@
+{{#if page_type '===' 'default'}}
+	{{> pages/custom/page/home/section-feed}}
+{{/if}}
+<footer class="footer" role="contentinfo">
+    <h2 class="footer-title-sr-only">{{lang 'footer.title'}}</h2>
+    <div class="container">
+        {{#if theme_settings.social_icon_placement_bottom '!==' 'bottom_none'}}
+            <article class="footer-info-col
+                footer-info-col--social
+                footer-info-col--{{#if theme_settings.social_icon_placement_bottom '===' 'bottom_left'}}left{{else}}right{{/if}}"
+                data-section-type="footer-webPages">
+                    <h3 class="footer-info-heading">{{lang 'social.connect'}}</h3>
+                    {{> components/common/social-links}}
+            </article>
+        {{/if}}
+        <section class="footer-info">
+        
+<div class="bx-footer">            
+			<article class="footer-info-col" data-section-type="footer-webPages">
+                <h3 class="footer-info-heading">{{lang 'footer.navigate'}}</h3>
+                <ul class="footer-info-list">
+                    {{#each pages}}
+                        <li>
+                            <a href="{{url}}">{{name}}</a>
+                        </li>
+                    {{/each}}
+                    <li>
+                        <a href="{{urls.sitemap}}">{{lang 'sitemap.page_title'}}</a>
+                    </li>
+                </ul>
+            </article>
+
+            <article class="footer-info-col" data-section-type="footer-categories">
+                <h3 class="footer-info-heading">{{lang 'footer.categories'}}</h3>
+                <ul class="footer-info-list">
+                    {{#each categories}}
+                        <li>
+                            <a href="{{url}}">{{name}}</a>
+                        </li>
+                    {{/each}}
+                </ul>
+            </article>
+
+            {{#and theme_settings.shop_by_brand_show_footer shop_by_brand.length}}
+            <article class="footer-info-col" data-section-type="footer-brands">
+                <h3 class="footer-info-heading">{{lang 'footer.brands'}}</h3>
+                <ul class="footer-info-list">
+                    {{#each shop_by_brand}}
+                        <li>
+                            <a href="{{url}}">{{name}}</a>
+                        </li>
+                    {{/each}}
+                    <li><a href="{{urls.brands}}">{{lang 'common.view_all'}}</a></li>
+                </ul>
+            </article>
+            {{/and}}
+
+            {{#if settings.address}}
+            <article class="footer-info-col info-address" data-section-type="storeInfo">
+                <h3 class="footer-info-heading">{{lang 'footer.info'}}</h3>
+                <address>{{nl2br settings.address}}</address>
+                {{#if settings.phone_number}}
+                    <a href="tel:{{settings.phone_number}}" class="btn-linkable link-call-us nowrap" target="_blank">{{settings.phone_number}}</a>
+                {{/if}}
+            </article>
+            {{/if}}
+</div>
+            <article class="footer-info-col foote-subscription" data-section-type="newsletterSubscription">
+                {{#if settings.show_newsletter_box}}
+                    {{> pages/custom/footer/subscription-form}}
+                {{/if}}
+                {{> components/common/payment-icons}}
+            </article>
+        </section>
+        {{#if theme_settings.geotrust_ssl_common_name}}
+            <div class="footer-geotrust-ssl-seal">
+                {{> components/common/geotrust-ssl-seal}}
+            </div>
+        {{/if}}
+        {{#if settings.paypal_commerce_credit_message}}
+        <div class="footer-copyright">
+            <p class="paypal-credit">{{nl2br settings.paypal_commerce_credit_message}}</p>
+        </div>
+        {{/if}}
+        {{#if theme_settings.show_powered_by}}
+            <div class="footer-copyright">
+            </div>
+        {{/if}}
+        {{#if theme_settings.show_copyright_footer}}
+            <div class="footer-copyright">
+                <p class="powered-by">&copy; {{moment format="YYYY"}} {{settings.store_name}} </p>
+            </div>
+        {{/if}}
+    </div>
+</footer>

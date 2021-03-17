@@ -1,0 +1,51 @@
+<div id="facetedSearch" class="facetedSearch sidebarBlock flex-justify-center">
+    {{> components/faceted-search/selected-facets selected}}
+
+    <a href="#facetedSearch-navList" role="button" class="facetedSearch-toggle toggleLink" data-collapsible>
+        <span class="facetedSearch-toggle-text">
+            {{#if facets.length '>' 2}}
+                {{lang 'search.faceted.browse-by'}} {{join (pluck facets 'title') ', ' limit=2}} &amp; {{toLowerCase (lang 'search.faceted.more')}}
+            {{else}}
+                {{lang 'search.faceted.browse-by'}} {{join (pluck facets 'title') ', ' lastSeparator=' & '}}
+            {{/if}}
+        </span>
+
+        <span class="facetedSearch-toggle-indicator">
+            <span class="toggleLink-text toggleLink-text--on">
+                {{lang 'search.faceted.hide-filters'}}
+
+                <i class="icon" aria-hidden="true">
+                    <svg><use xlink:href="#icon-keyboard-arrow-up"/></svg>
+                </i>
+            </span>
+
+            <span class="toggleLink-text toggleLink-text--off">
+                {{lang 'search.faceted.show-filters'}}
+
+                <i class="icon" aria-hidden="true">
+                    <svg><use xlink:href="#icon-keyboard-arrow-down"/></svg>
+                </i>
+            </span>
+        </span>
+    </a>
+
+    {{#any facets visible=true}}
+        <div
+            id="facetedSearch-navList"
+            class="facetedSearch-navList blocker-container">
+            <div class="accordion accordion--navList">
+                {{#each facets}}
+                    {{#if visible}}
+                        {{{dynamicComponent 'components/faceted-search/facets'}}}
+                    {{/if}}
+                {{/each}}
+            </div>
+            <div class="blocker" style="display: none;"></div>
+        </div>
+    {{/any}}
+    {{> components/products/filter sort=pagination.category.sort}}
+    <div class="grid-switch-wrap">
+        <span class="three-grid-btn"><svg width="30" height="30" viewBox="3 3 14 14" xmlns="http://www.w3.org/2000/svg" class="icon" enable-background="new 0 0 0 0" ><path fill-rule="evenodd" clip-rule="evenodd" d="M12 3H8.143v3.857H12V3zM6.857 3H3v3.857h3.857V3zM12 8.143H8.143V12H12V8.143zm-5.143 0H3V12h3.857V8.143zM13.143 3H17v3.857h-3.857V3zm0 5.143H17V12h-3.857V8.143zm-5 4.857H12v3.857H8.143V13zM3 13h3.857v3.857H3V13zm10.143 0H17v3.857h-3.857V13z"></path></svg></span>
+        <span class="two-grid-btn"><svg width="30" height="30" viewBox="3 3 14 14" xmlns="http://www.w3.org/2000/svg" class="icon"><path fill-rule="evenodd" clip-rule="evenodd" d="M11 3h6v6h-6V3zM3 3h6v6H3V3zm8 8h6v6h-6v-6zm-8 0h6v6H3v-6z"></path></svg></span>
+    </div>
+</div>

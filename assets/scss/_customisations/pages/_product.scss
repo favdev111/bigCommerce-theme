@@ -1,0 +1,30 @@
+// =============================================================================
+// Customised Contact styling
+// =============================================================================
+
+.pages-product {
+	.productView {
+		.productView-rating, .bx-upc-label {
+			display: none;
+		}
+	}
+	.productView-info {
+		.productView-info-description-container {
+			.productView-title {
+				font-size: 20px;
+			}
+		}
+	}
+}
+@media (max-width: 800px) {
+	.pages-product {
+		.productView-details {
+			padding-top: 50px;
+		}
+		.slick-slider {
+			.slick-dots { 
+				bottom: -40px;
+			}
+		}
+	}
+}

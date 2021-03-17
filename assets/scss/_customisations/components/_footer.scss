@@ -1,0 +1,76 @@
+// =============================================================================
+// Customised Footer styling
+// =============================================================================
+
+.footer {
+	background-color: $custom_lightgreen;
+	border-top: none;
+	.footer-payment-icon {
+		fill: $custom_darkgreen;
+		opacity: 0.8;
+		height: 30px;
+	}
+	h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+		font-family: $custom_body_font;
+	}
+	a {
+		text-decoration: none; 
+	}
+	.footer-info {
+		display: flex;
+		flex-direction: row;
+		.bx-footer {
+			width: 60%;
+			@media (max-width: 800px) {
+				width: 90%;
+			}
+			.footer-info-col {
+				&.info-address {
+					display: none;
+				}
+				.link-call-us {
+					font-style: italic;
+				}
+			}
+		}
+	}
+	@media (min-width: 801px) {
+		.form {
+			margin: 0;
+		}
+		.footer-payment-icons {
+			margin-top: 0px;
+			display: flex;
+		}
+	}
+	@media (max-width: 800px) {
+		.container {
+			padding: 0; 
+			width: 100%;
+			.footer-info {
+				display: flex; 
+				flex-direction: row;
+				flex-wrap: wrap;
+				justify-content: space-evenly;
+				width: 100%;
+				padding: 0;
+				margin: auto;
+				.footer-info-col {
+					width: 45%;
+					text-align: left;
+					h3, li, address {
+						text-align: left;
+					}
+					&.foote-subscription { 
+						width: 100%;
+						h3 {
+							font-size: 2rem;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+

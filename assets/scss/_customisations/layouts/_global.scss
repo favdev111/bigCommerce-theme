@@ -1,0 +1,74 @@
+// =============================================================================
+// Customised Global styling
+// =============================================================================
+
+html {
+    font-size: 16px;
+    line-height: 1.5em;
+    font-family: $custom_body_font;
+    color: $custom_darkgreen;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+    @include fontsize(16px);
+    line-height: 1.2em;
+    font-family: $custom_heading_font;
+    color: $custom_darkgreen;
+}
+
+h1, .h1 {
+    @include fontsize(55px);
+}
+
+h2, .h2 {
+    @include fontsize(45px);
+}
+
+h3, .h3 {
+  
+}
+
+h4, .h4 {
+    
+}
+
+h5, .h5 {
+    
+}
+
+h6, .h6 {
+    
+}
+
+/* Style guide helpers */
+code {
+    display: block;
+    font-family: monospace;
+    padding: 10px 15px;
+    margin-top: 20px;
+    background-color: #eeeeee;
+}
+
+.style-example {
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+/* BC Maintentance */
+.maintenanceNotice, .adminBar {
+    display: none !important;
+}
+
+body.hasAdminBar {
+    padding-top: 0;
+
+    header.header {
+        padding-top: 0;
+    }
+}

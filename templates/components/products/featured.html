@@ -1,0 +1,51 @@
+<h2 class="page-heading">{{lang 'products.featured' }}</h2>
+
+<div class="productGrid productGrid--maxCol{{ columns }}" data-product-type="featured" {{#if settings.data_tag_enabled}} data-list-name="Featured Products" {{/if}}>
+    <div class="featured-slick" data-list-name="feature-container" data-slick='{
+        "dots": false,
+        "infinite": false,
+        "mobileFirst": false,
+        "slidesToShow": 4,
+        "slidesToScroll": 1,
+        "slide": ".featured-product-slide",
+        "prevArrow": "{{#if customArrowClass}}.{{customArrowClass}}{{/if}}.featured-product-prev-arrow",
+        "nextArrow": "{{#if customArrowClass}}.{{customArrowClass}}{{/if}}.featured-product-next-arrow",
+        "responsive": [
+            {
+                "breakpoint": 1300,
+                "settings": {
+                    "slidesToShow": 3,
+                    "slidesToScroll": 1
+                }
+            },
+            {
+                "breakpoint": 850,
+                "settings": {
+                    "slidesToShow": 2,
+                    "slidesToScroll": 1
+                }
+            },
+            {
+                "breakpoint": 750,
+                "settings": {
+                    "slidesToShow": 2,
+                    "slidesToScroll": 1
+                }
+            }
+        ]
+    }'>
+    {{#if products.length '>' 1}}
+    <button aria-label="{{lang 'carousel.arrowAriaLabel'}} {{products.length}}" class="{{#if customArrowClass}}{{customArrowClass}} {{/if}}featured-product-prev-arrow slick-prev slick-arrow"></button>
+    {{/if}}
+    {{#each products}}
+        <div class="productCarousel-slide featured-product-slide">
+                {{>components/products/card settings=../settings theme_settings=../theme_settings customer=../customer event="list" position=(add @index 1)}}
+        </div>
+    {{/each}}
+    
+    {{#if products.length '>' 1}}
+    <button aria-label="{{lang 'carousel.arrowAriaLabel'}} {{products.length}}" class="{{#if customArrowClass}}{{customArrowClass}} {{/if}}featured-product-next-arrow slick-next slick-arrow"></button>
+    {{/if}}
+    
+    </div>
+</div>

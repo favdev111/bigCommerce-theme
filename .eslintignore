@@ -1,0 +1,6 @@
+/assets/js/bundle.js
+/assets/dist
+/assets/js/theme/_customisations/global/customlb.js
+/assets/js/theme/_customisations/pages/home/homepage.js
+stencil.conf.js
+webpack.conf.js

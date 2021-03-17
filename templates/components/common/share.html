@@ -1,0 +1,95 @@
+{{#if settings.add_this.buttons}}
+    <div class="addthis_toolbox addthis_32x32_style" addthis:url="{{url}}"
+         addthis:title="{{title}}">
+        <ul class="socialLinks">
+            {{#each settings.add_this.buttons}}
+                <li class="socialLinks-item socialLinks-item--{{service}}">
+                	{{#if service '===' 'email'}}
+                    <a class="btn-email-share socialLinks__link icon icon--{{service}} "
+                       data-email-share-title="{{../../title}}"
+                       data-email-share-url="{{../../url}}"
+                       data-email-share-body="Look at this on "
+                       data-email-share-subject="Amazing product that I found `{{../../title}}`"
+                       href="#"
+                       {{{annotation}}}
+                    >
+                    {{else if service '===' 'print'}}
+                    <a class="btn-print socialLinks__link icon icon--{{service}} "
+                       data-print-id-target="productView"
+                       href="#"
+                       {{{annotation}}}
+                    >
+                    
+                    {{else}}
+                    <a class="addthis_button_{{service}} socialLinks__link icon icon--{{service}}"
+                       title="{{{capitalize service}}}"
+                       href="#"
+                       {{{annotation}}}
+                    >
+					{{/if}}
+                        <span class="aria-description--hidden">{{{capitalize service}}}</span>
+                        {{#if service '===' 'facebook'}}
+                            <svg>
+                                <use xlink:href="#icon-facebook"/>
+                            </svg>
+                        {{else if service '===' 'email'}}
+                            <svg>
+                                <use xlink:href="#icon-envelope"/>
+                            </svg>
+                        {{else if service '===' 'print'}}
+                            <svg>
+                                <use xlink:href="#icon-print"/>
+                            </svg>
+                        {{else if service '===' 'twitter'}}
+                            <svg>
+                                <use xlink:href="#icon-twitter"/>
+                            </svg>
+                        {{else if service '===' 'linkedin'}}
+                            <svg>
+                                <use xlink:href="#icon-linkedin"/>
+                            </svg>
+                        {{else if service '===' 'google'}}
+                            <svg>
+                                <use xlink:href="#icon-google"/>
+                            </svg>
+                        {{else if service '===' 'pinterest'}}
+                            <svg>
+                                <use xlink:href="#icon-pinterest"/>
+                            </svg>
+                        {{/if}}
+                    </a>
+                </li>
+            {{/each}}
+            	<li class="socialLinks-item socialLinks-item--instagram">
+                	<a class="socialLinks__link icon icon--instagram"
+                       title="{{{capitalize service}}}"
+                       href="https://www.instagram.com/sillandsage/"
+                       target="_blank"
+                    >
+                    	<svg>
+                            <use xlink:href="#icon-instagram"/>
+                        </svg>
+                    </a>
+                </li>
+        </ul>
+        <script type="text/javascript"
+                defer src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4e94ed470ee51e32"></script>
+        <script>
+            window.addEventListener('DOMContentLoaded', function() {
+                if (typeof(addthis) === "object") {
+                    addthis.toolbox('.addthis_toolbox');
+                }
+            });
+        </script>
+    </div>
+{{/if}}
+{{#if settings.facebook_like_button.enabled}}
+    <iframe
+        class="facebook{{#if settings.facebook_like_button.verb '===' 'recommend'}}Recommend{{else}}Like{{/if}}Btn"
+        style="border:none; overflow:hidden; margin: 0; padding: 0; position:absolute"
+        src="https://www.facebook.com/plugins/like.php?href={{settings.facebook_like_button.href}}&amp;layout=button_count{{#if settings.facebook_like_button.verb '===' 'recommend'}}&amp;action=recommend{{/if}}&amp;colorscheme=light&amp;height=20"
+        scrolling="no"
+        frameborder="0"
+        allowTransparency="true">
+    </iframe>
+{{/if}}

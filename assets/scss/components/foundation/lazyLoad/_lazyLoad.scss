@@ -1,0 +1,30 @@
+@mixin lazy-loaded-img() {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+@mixin lazy-loaded-padding($size-param) {
+    &:after {
+        content: '';
+        display: block;
+        height: 0;
+        width: 100%;
+        padding-bottom: get-padding(stencilString($size-param));
+    }
+}
+
+@mixin cart-item-lazy-load-img-placeholder() {
+    &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+    }
+}
